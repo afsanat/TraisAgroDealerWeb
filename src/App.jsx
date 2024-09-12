@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import UserDetails from './components/UserDetails'
 import AgroSignup from './components/AgroSignup';
 import AgroLogin from './components/AgroLogin';
-import Otp from './components/otp';
+import Otp from './components/Otp';
 
 function App() {
   return (
