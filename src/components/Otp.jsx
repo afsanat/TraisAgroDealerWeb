@@ -9,7 +9,7 @@ import {
   TERipple,
 } from "tw-elements-react";
 
-const FingerprintAuth = () => {
+const Otp = () => {
   const [userInfo, setUserInfo] = useState(null);
   const navigate = useNavigate();
   const [basicActive, setBasicActive] = useState("tab1");
@@ -49,16 +49,16 @@ const FingerprintAuth = () => {
       // });
 
       // if (response.ok) {
-        // const result = await response.json();
+      //   const result = await response.json();
 
-        // console.log("data", result)
+      //   console.log("data", result)
         const mockUserDetails = {
-          "Allowed Fertilizers in Kgs": 200,
-          "Allowed Seeds in kgs": 100,
-          "Allowed Pesticides in kgs": 300,
-          "Bought Seeds in kgs": 0,
-          "Bought Fertilizers in kgs": 0,
-          "Bought Pesticides in kgs": 0,
+            "Allowed Fertilizers in Kgs": 200,
+            "Allowed Seeds in kgs": 100,
+            "Allowed Pesticides in kgs": 300,
+            "Bought Seeds in kgs": 20,
+            "Bought Fertilizers in kgs": 12,
+            "Bought Pesticides in kgs": 0,
           };
           setUserInfo(mockUserDetails);
           localStorage.setItem('userInfo', JSON.stringify(mockUserDetails));
@@ -96,7 +96,37 @@ const FingerprintAuth = () => {
               Smart Traceable Agriculture
               </div>        
             </p>
-        </h1> 
+        </h1>
+        <p className="mb-4 mt-0 text-base font-light leading-relaxed">
+          Confirm the following order by having the farmer scan fingerprint or enter their IDs.
+      </p>
+        <div className="flex flex-col">
+          <div className=" sm:-mx-6 lg:-mx-8">
+            <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">
+              <div className="overflow-hidden">
+                <table className="min-w-full text-center text-sm font-light">
+                  <thead
+                    className="border-b bg-neutral-800 font-medium text-white dark:border-neutral-500 dark:bg-neutral-900">
+                    <tr>
+                      <th scope="col" className=" px-6 py-4">#</th>
+                      <th scope="col" className=" px-6 py-4">Seeds in Kgs</th>
+                      <th scope="col" className=" px-6 py-4">Fertilizers in Kgs</th>
+                      <th scope="col" className=" px-6 py-4">Pesticide in Kgs</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b dark:border-neutral-500">
+                      <td className="whitespace-nowrap  px-6 py-4 font-medium">1</td>
+                      <td className="whitespace-nowrap  px-6 py-4">20</td>
+                      <td className="whitespace-nowrap  px-6 py-4">12</td>
+                      <td className="whitespace-nowrap  px-6 py-4">0</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+    </div> 
         <div className="mb-3">
           <TETabs>
             <TETabsItem
@@ -231,4 +261,4 @@ const FingerprintAuth = () => {
   );
 };
 
-export default FingerprintAuth;
+export default Otp;

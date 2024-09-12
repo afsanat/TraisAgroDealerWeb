@@ -17,7 +17,7 @@ export default function AgroLogin() {
      setIsLoading(false);
 
       navigate('/farmerAuth');
-    }, 2000); 
+    }, 1000); 
   } else {
     form.reportValidity();
   }
