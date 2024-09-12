@@ -73,7 +73,7 @@ const Otp = () => {
   };
 
   return (
-    <div className="">
+    <div className="container">
       <div className="p-4 flex justify-between items-center">
           <img
             className="w-32"
