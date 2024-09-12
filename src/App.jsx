@@ -7,7 +7,6 @@ import AgroLogin from './components/AgroLogin';
 import Otp from './components/otp';
 
 function App() {
-
   return (
     <Router>
       <Routes>
