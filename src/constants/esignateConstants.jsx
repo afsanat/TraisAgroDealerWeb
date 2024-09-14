@@ -1,26 +1,36 @@
-import SignInWithEsignetButton from '/public/esignateSignin.js';
+// Import the SignInWithEsignetButton component
+import SignInWithEsignetButton from '/public/esignateSignin.js'; 
 
+// Function to render the sign-in button
 export const renderSignInButton = () => {
+    // Configuration object 
     const oidcConfig = {
-      acr_values: 'mosip:idp:acr:generated-code mosip:idp:acr:biometrics mosip:idp:acr:static-code',
-      authorizeUri: 'https://esignet.collab.mosip.net/authorize',
+      // GET VALUES FROM THE ENVIRONMENT VARIABLE FOR SECURITY
+      acr_values: import.meta.env.VITE_ACR_VALUE,
+      authorizeUri: import.meta.env.VITE_AUTHORIZATION_URI,
       claims_locales: 'en',
-      client_id: 'XxVxF7abwiCBJFK3wEqcjorFgzo68sWMU22ndmQhpgo',
+      // Client ID for the TRAIS application
+      client_id: import.meta.env.VITE_CLIENT_ID,
       display: 'page',
-      max_age: 21,
-      nonce: 'ere973eieljznge2311',
-      prompt: 'consent',
-      redirect_uri: 'https://trais-agro-dealer-web.vercel.app/UserDetails',
-      scope: 'openid profile',
+      max_age: import.meta.env.VITE_MAX_AGE,
+      nonce: import.meta.env.VITE_NONCE,
+      prompt: import.meta.env.VITE_PROMPT,
+      // URI to redirect after authorization
+      redirect_uri: import.meta.env.VITE_REDIRECT_URI,
+      scope: import.meta.env.VITE_SCOPE,
       state: 'eree2311',
       ui_locales: 'en',
       claims: {},
     };
 
+    // Initialize the SignInWithEsignetButton if it is available
     SignInWithEsignetButton?.init({
+      // Pass the OIDC configuration to the button
       oidcConfig: oidcConfig,
+      // Configuration for the appearance and style of the button
       buttonConfig: {
         customStyle: {
+          // Style for the label of the button
           labelSpanStyle: {
             display: 'inline-block',
             'font-size': '0.875rem',
@@ -28,6 +38,7 @@ export const renderSignInButton = () => {
             'line-height': '1.25rem',
             'vertical-align': 'middle'
           },
+          // Style for the logo container
           logoDivStyle: {
             alignItems: 'center',
             background: 'white',
@@ -40,11 +51,13 @@ export const renderSignInButton = () => {
             verticalAlign: 'middle',
             width: '30px'
           },
+          // Style for the logo image
           logoImgStyle: {
             height: '29px',
             'object-fit': 'contain',
             width: '29px'
           },
+          // Style for the outer container of the button
           outerDivStyleStandard: {
             'align-items': 'center',
             background: '#0E3572',
@@ -58,8 +71,10 @@ export const renderSignInButton = () => {
             width: '100%'
           }
         },
+        // Text to be displayed on the button
         labelText: 'Sign in with e-Signet..........'
       },
+      // Target element where the button will be rendered
       signInElement: document.getElementById("sign-in-with-esignet"),
     });
-  }
+}
