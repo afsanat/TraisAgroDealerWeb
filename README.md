@@ -16,7 +16,6 @@
 Input subsidy programs (ISPs) in Sub-Saharan Africa face several critical challenges:
 
 - **Fraud and Elite Capture**: Inefficiencies and misuse of resources undermine program effectiveness.
-- **Gender Bias**: Existing programs often disadvantage marginalized women.
 - **Lack of Specificity**: Blanket approaches fail to address individual needs effectively.
 
 These issues prevent ISPs from ensuring food security. A more innovative and verifiable solution is necessary to improve the distribution of agricultural inputs.
