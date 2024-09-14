@@ -215,7 +215,7 @@ const UserDetails = () => {
                 </TETabsPane>
                   <TETabsPane show={basicActive === "tab2"}>
                       <div className="space-y-4">
-                          {Object.entries(userDetails)?.map(([key, value]) => (
+                          {Object?.entries(userDetails)?.map(([key, value]) => (
                             
                             <div key={key} className="flex items-center space-x-4 bg-white p-4 rounded-lg shadow-sm   grid grid-cols-2 gap-4">
                               <span className="font-medium text-gray-600 capitalize">
