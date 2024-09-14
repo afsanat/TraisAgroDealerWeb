@@ -30,18 +30,26 @@ The **Smart TRAIS Tool** leverages **Digital ID** to enhance the distribution of
 - **Verification and Traceability**: Links subsidies to Digital IDs, ensuring secure and traceable distribution.
 - **API Integration**: Public and private entities fetch Digital IDs to determine subsidy eligibility and class.
 
-`![System Architecture](/public/TRAISFlow.jpg)`
+![System Architecture](/public/TRAISFlow.jpg)
 
 ## How to Run the Application
 
 1. **Clone the Repository**
+```bash
    git clone https://github.com/afsanat/TraisAgroDealerWeb.git
+```
 
 2. **Navigate to the Project Directory**
+```bash
    cd smart-trais-tool
+   ```
 
 3. **Install Dependencies**
+```bash
    npm install
+   ```
 
 4. **Start the Server**
+```bash
    npm run dev
+   ```
