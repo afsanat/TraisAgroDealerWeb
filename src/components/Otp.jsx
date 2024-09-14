@@ -2,10 +2,14 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { renderSignInButton } from '../constants/esignateConstants';
 
+// Define the Otp functional component
 const Otp = () => {
+  // Hook to get the navigate function for programmatic navigation
   const navigate = useNavigate();
 
-  useEffect(()=>{
+  // useEffect hook to perform side effects when the component mounts
+  useEffect(() => {
+    // Mock user details to be stored in local storage
     const mockUserDetails = {
       "Allowed Fertilizers in Kgs": 200,
       "Allowed Seeds in kgs": 100,
@@ -13,12 +17,17 @@ const Otp = () => {
       "Bought Seeds in kgs": 20,
       "Bought Fertilizers in kgs": 12,
       "Bought Pesticides in kgs": 0,
-      };
-      localStorage.setItem('userInfo', JSON.stringify(mockUserDetails));
-      renderSignInButton()
-  },[])
+    };
 
+    // Store the mock user details in local storage as a JSON string
+    localStorage.setItem('userInfo', JSON.stringify(mockUserDetails));
 
+    // Call the function to render the sign-in button
+    renderSignInButton();
+  }, []); // Empty dependency array means this effect runs only once after the initial render
+
+  
+  // Component render 
   return (
     <div className="container">
       <div className="p-4 flex justify-between items-center">

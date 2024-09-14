@@ -16,21 +16,31 @@ import {
   TEInput
 } from "tw-elements-react";
 
+// Define the UserDetails functional component
 const UserDetails = () => {
+  // Hook to get the navigate function for programmatic navigation
   const navigate = useNavigate();
+  // State to control the visibility of a modal
   const [showModal, setShowModal] = useState(false);
+
+  // State to manage the active tab in a tabbed interface
   const [basicActive, setBasicActive] = useState("tab1");
 
-  const handleBasicClick = (value) => {
-    if (value === basicActive) {
-    return;
-    }
-    setBasicActive(value);
-};
+    // Handler function to update the active tab
+    const handleBasicClick = (value) => {
+      // If the clicked tab is already active, do nothing
+      if (value === basicActive) {
+        return;
+      }
+      // Update the active tab
+      setBasicActive(value);
+    };
 
-  const confirmOrder = () =>{
-    navigate("/otp")
-  }
+    // Function to navigate to the OTP verification page
+    const confirmOrder = () => {
+      navigate("/otp");
+    };
+
 
   // Initial mock user details
   const initialUserDetails = JSON.parse(localStorage.getItem('userInfo')) || {};
@@ -38,6 +48,7 @@ const UserDetails = () => {
   const [userDetails, setUserDetails] = useState(initialUserDetails);
 
 
+  // Component render
   return (
     
     <div className="container mx-auto p-4">
@@ -69,7 +80,7 @@ const UserDetails = () => {
                     <div className="flex items-center space-x-4">
                         <img src="https://cdn-icons-png.flaticon.com/512/8847/8847419.png" alt="Profile Picture" className="w-24 h-24 rounded-full border-4 border-white"/>
                         <div className="text-white">
-                            <h1 className="text-2xl font-bold">Mullah Hirwa</h1>
+                            <h1 className="text-2xl font-bold">Afsanat Ineza</h1>
                             <p className="text-sm">Farmer</p>
                         </div>
                     </div>

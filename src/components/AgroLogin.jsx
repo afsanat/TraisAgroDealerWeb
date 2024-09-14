@@ -2,27 +2,41 @@ import React, { useState } from "react";
 import { TEInput, TERipple } from "tw-elements-react";
 import { useNavigate } from 'react-router-dom';
 
+// Define the AgroLogin functional component
 export default function AgroLogin() {
- const navigate = useNavigate();
- const [isLoading, setIsLoading] = useState(false);
+  // Hook to get the navigate function for programmatic navigation
+  const navigate = useNavigate();
 
- const handleLogin = (event) => {
-  event.preventDefault(); 
+  // State to track the loading status
+  const [isLoading, setIsLoading] = useState(false);
 
-  const form = event.target.closest('form');
-  if (form.checkValidity()) {
-    setIsLoading(true);
+  // Handler function for form submission
+  const handleLogin = (event) => {
+    event.preventDefault(); // Prevent the default form submission behavior
 
-    setTimeout(() => {
-     setIsLoading(false);
+    // Find the closest form element from the event target
+    const form = event.target.closest('form');
+    
+    // Check if the form is valid
+    if (form.checkValidity()) {
+      // Set loading state to true, indicating that login is in progress
+      setIsLoading(true);
 
-      navigate('/farmerAuth');
-    }, 1000); 
-  } else {
-    form.reportValidity();
-  }
+      // Simulate an API call or processing with a timeout
+      setTimeout(() => {
+        // Reset loading state after processing
+        setIsLoading(false);
+
+        // Navigate to the farmer authentication page after a delay
+        navigate('/farmerAuth');
+      }, 1000); // Delay of 1 second before navigating
+    } else {
+      // If the form is not valid, trigger browser's built-in validation UI
+      form.reportValidity();
+    }
   };
 
+  // Component render
   return (
     <section className="h-full">
       <div className="container h-full p-10">

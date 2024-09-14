@@ -2,31 +2,41 @@ import React, { useState } from "react";
 import { TEInput, TERipple, TEAlert } from "tw-elements-react";
 import { useNavigate } from 'react-router-dom';
 
-
+// Define the AgroSignup functional component
 export default function AgroSignup(event) {
-    const [signedup, setSignedUp] = useState(false);
+  // State to track whether the signup process is complete
+  const [signedup, setSignedUp] = useState(false);
 
-    const navigate = useNavigate();
+  // Hook to get the navigate function for programmatic navigation
+  const navigate = useNavigate();
 
-    const handleSignUp = (event) => {
+  // Handler function for form submission
+  const handleSignUp = (event) => {
+    event.preventDefault(); // Prevent the default form submission behavior
 
-      event.preventDefault(); 
+    // Find the closest form element from the event target
+    const form = event.target.closest('form');
+    
+    // Check if the form is valid
+    if (form.checkValidity()) {
+      // Update state to indicate successful signup
+      setSignedUp(true);
 
-      const form = event.target.closest('form');
-      if (form.checkValidity()) {
-          setSignedUp(true);
-      
-          setTimeout(() => {
-              setSignedUp(false);
-      
-            navigate('/');
-          }, 1000); 
-        }
-       else {
-        form.reportValidity();
-       }
-      }
+      // Simulate an API call or processing with a timeout
+      setTimeout(() => {
+        // Reset the signedUp state
+        setSignedUp(false);
 
+        // Navigate to the home page after a delay
+        navigate('/');
+      }, 1000); // Delay of 1 second before navigating
+    } else {
+      // If the form is not valid, trigger browser's built-in validation UI
+      form.reportValidity();
+    }
+  };
+
+  // Component render 
   return (
     <section className="h-full">
       <div className="container h-full p-10">

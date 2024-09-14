@@ -2,11 +2,17 @@ import React, { useEffect, useState } from 'react';
 import {  useNavigate } from 'react-router-dom';
 import { renderSignInButton } from '../constants/esignateConstants';
 
+// Define the FingerprintAuth functional component
 const FingerprintAuth = () => {
+  // State to hold user information
   const [userInfo, setUserInfo] = useState(null);
+
+  // Hook to get the navigate function for programmatic navigation
   const navigate = useNavigate();
 
-  useEffect(()=>{
+  // useEffect hook to perform side effects when the component mounts
+  useEffect(() => {
+    // Mock user details object
     const mockUserDetails = {
       "Allowed Fertilizers in Kgs": 200,
       "Allowed Seeds in kgs": 100,
@@ -14,12 +20,19 @@ const FingerprintAuth = () => {
       "Bought Seeds in kgs": 0,
       "Bought Fertilizers in kgs": 0,
       "Bought Pesticides in kgs": 0,
-      };
-      setUserInfo(mockUserDetails);
-      localStorage.setItem('userInfo', JSON.stringify(mockUserDetails));
-      renderSignInButton()
-  },[])
+    };
 
+    // Update local state with mock user details
+    setUserInfo(mockUserDetails);
+
+    // Store the mock user details in local storage as a JSON string
+    localStorage.setItem('userInfo', JSON.stringify(mockUserDetails));
+
+    // Call the function to render the sign-in button
+    renderSignInButton();
+  }, []); // Empty dependency array means this effect runs only once after the initial render
+
+  // Component render
   return (
     <div className="">
       <div className="p-4 flex justify-between items-center">
