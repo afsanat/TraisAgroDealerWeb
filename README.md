@@ -2,9 +2,12 @@
 
 ## Overview
 
-**Title**: Smart TRAIS Tool: TRaceable Agro – Input Subsidy Tool Using Digital ID 
+**Title**: Smart TRAIS Tool: TRaceable Agro – Input Subsidy Tool Using Digital ID
+
 **Sector**: Agriculture  
+
 **Hosted Agro-dealer Portal**: https://trais-agro-dealer-web.vercel.app/
+
 **Figma Design for Farmer registration on Mobile Devices**: https://www.figma.com/proto/p9NTbNvsI1kAqgHxhiHSek/Smart-Traceable-Agriculture?node-id=1-2&t=D9mYhTAMvB7sT1M0-1
 
 
@@ -22,13 +25,12 @@ These issues prevent ISPs from ensuring food security. A more innovative and ver
 
 The **Smart TRAIS Tool** leverages **Digital ID** to enhance the distribution of agricultural subsidies:
 
-```markdown
-![System Architecture](/public/TRAISFlow.jpg)
-
 ### Digital ID Integration
 
 - **Verification and Traceability**: Links subsidies to Digital IDs, ensuring secure and traceable distribution.
 - **API Integration**: Public and private entities fetch Digital IDs to determine subsidy eligibility and class.
+
+`![System Architecture](/public/TRAISFlow.jpg)`
 
 ## How to Run the Application
 
