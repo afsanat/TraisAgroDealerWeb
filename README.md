@@ -29,21 +29,22 @@ The **Smart TRAIS Tool** leverages **Digital ID** to enhance the distribution of
 - **API Integration**: Public and private entities fetch Digital IDs to determine subsidy eligibility and class.
 
 ## System Architecture
-![System Architecture](/public/TRAISFlow.jpg)
+<img src="/public/TRAISFlow.jpg" alt="System Architecture" width="500" height="300"/>
 
 ## Class Diagram
-![Class Diagram](/public/classDiagram.jpg)
+<img src="/public/classDiagram.jpg" alt="Class Diagram" width="500" height="300"/>
 
 ## Use Case Diagram
-![Use Case Diagram](/public/useCase.jpg)
+<img src="/public/useCase.jpg" alt="Use Case Diagram" width="500" height="300"/>
+
 
 ## Key Users
 
-1. **Agro-Dealer**
+1. Agro-Dealer
 
-2. **Admin (Governemnt Entity)**
+2. Admin (Government Entity)
 
-3. **Farmer**
+3. Farmer
 
 ## How to Run the Agro-Dealer Portal
 
