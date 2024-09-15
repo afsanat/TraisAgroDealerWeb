@@ -40,11 +40,11 @@ The **Smart TRAIS Tool** leverages **Digital ID** to enhance the distribution of
 
 ## Key Users
 
-1. **Agro-Dealer**
+1. Agro-Dealer
 
-2. **Admin (Government Entity)**
+2. Admin (Government Entity)
 
-3. **Farmer**
+3. Farmer
 
 ## How to Run the Agro-Dealer Portal
 
