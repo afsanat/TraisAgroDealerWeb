@@ -29,13 +29,13 @@ The **Smart TRAIS Tool** leverages **Digital ID** to enhance the distribution of
 - **API Integration**: Public and private entities fetch Digital IDs to determine subsidy eligibility and class.
 
 ## System Architecture
-<img src="/public/TRAISFlow.jpg" alt="System Architecture" width="500" height="300"/>
+<img src="/public/TRAISFlow.jpg" alt="System Architecture" width="600" height="300"/>
 
 ## Class Diagram
-<img src="/public/classDiagram.jpg" alt="Class Diagram" width="500" height="300"/>
+<img src="/public/classDiagram.jpg" alt="Class Diagram" width="600" height="300"/>
 
 ## Use Case Diagram
-<img src="/public/useCase.jpg" alt="Use Case Diagram" width="500" height="300"/>
+<img src="/public/useCase.jpg" alt="Use Case Diagram" width="600" height="300"/>
 
 
 ## Key Users
@@ -146,7 +146,7 @@ uvicorn main:app --reload --host 0.0.0.0 --port 8080
 
 ## Contact
 For support or inquiries, please reach out to the project maintainer.
-Nasiru, Thompson & Afsanat
+Nasiru, Thomson & Afsanat
 
 ---
 
