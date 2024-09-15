@@ -78,9 +78,9 @@ const UserDetails = () => {
                 <img src="https://t3.ftcdn.net/jpg/07/38/63/14/360_F_738631427_i0Txuc3zh1r3DzAibqgg3lH8173H4xeG.jpg" alt="Cover Image" className="w-full h-48 object-cover"/>
                 <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black to-transparent">
                     <div className="flex items-center space-x-4">
-                        <img src="https://cdn-icons-png.flaticon.com/512/8847/8847419.png" alt="Profile Picture" className="w-24 h-24 rounded-full border-4 border-white"/>
+                        <img src="https://3349261888-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FylzvZHp30DQ3rNCClELV%2Fuploads%2Frw7eR80Qvs6GUEVmVzqU%2FMaria%20Powell.jpeg?alt=media&token=67483ce6-cf77-46aa-a169-5f713e274ea2" alt="Profile Picture" className="w-24 h-24 rounded-full border-4 border-white"/>
                         <div className="text-white">
-                            <h1 className="text-2xl font-bold">Afsanat Ineza</h1>
+                            <h1 className="text-2xl font-bold">Maria Powell</h1>
                             <p className="text-sm">Farmer</p>
                         </div>
                     </div>

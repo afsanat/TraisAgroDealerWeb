@@ -40,7 +40,7 @@ The **Smart TRAIS Tool** leverages **Digital ID** to enhance the distribution of
 
 2. **Navigate to the Project Directory**
 ```bash
-   cd smart-trais-tool
+   cd TraisAgroDealerWeb
    ```
 
 3. **Install Dependencies**
