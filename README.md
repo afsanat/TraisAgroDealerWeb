@@ -28,14 +28,22 @@ The **Smart TRAIS Tool** leverages **Digital ID** to enhance the distribution of
 - **Verification and Traceability**: Links subsidies to Digital IDs, ensuring secure and traceable distribution.
 - **API Integration**: Public and private entities fetch Digital IDs to determine subsidy eligibility and class.
 
+## System Architecture
 ![System Architecture](/public/TRAISFlow.jpg)
+
+## Class Diagram
 ![Class Diagram](/public/classDiagram.jpg)
+
+## Use Case Diagram
 ![Use Case Diagram](/public/useCase.jpg)
 
 ## Key Users
-**Agro-Dealer**
-**Admin (Governemnt Entity)**
-**Farmer**
+
+1. **Agro-Dealer**
+
+2. **Admin (Governemnt Entity)**
+
+3. **Farmer**
 
 ## How to Run the Agro-Dealer Portal
 
@@ -76,19 +84,19 @@ TRAIS Admin Portal is a web application built using PHP and MySQL. This guide wi
    cd TraisAgroDealerWeb/traisAdmin
    ```
 
-## Prerequisites
+**Prerequisites**
 
 To run the application, ensure you have the following installed:
 
 - **XAMPP** or **WAMP** (for running a local server with PHP and MySQL)
 
-## Installation Guide
+**Installation Guide**
 
-### Step 1: Install XAMPP or WAMP
+**Step 1: Install XAMPP or WAMP**
 1. Download and install [XAMPP](https://www.apachefriends.org/index.html) or [WAMP](https://www.wampserver.com/en/).
 2. After installation, launch XAMPP/WAMP and start both **Apache** and **MySQL** services.
 
-### Step 2: Set Up the Database
+**Step 2: Set Up the Database**
 1. Open your browser and navigate to **PHPMyAdmin** by typing `http://localhost/phpmyadmin/` in the address bar.
 2. In PHPMyAdmin, create a new database:
    - Click on the **Databases** tab.
@@ -100,19 +108,19 @@ To run the application, ensure you have the following installed:
    - Click **Choose File** and locate the `tms.sql` file found inside the `trais` folder of the project.
    - Click **Go** to import the database.
 
-### Step 3: Set Up the Web Application
+**Step 3: Set Up the Web Application**
 1. Copy the entire `trais` project folder and paste it into the **htdocs** directory (for XAMPP) or the **www** directory (for WAMP). 
    - For XAMPP, the path is usually `C:\xampp\htdocs\`.
    - For WAMP, the path is usually `C:\wamp64\www\`.
 2. After placing the project folder, open your browser and navigate to:  
    `http://localhost/trais/index.php`
 
-### Step 4: Admin Login
+**Step 4: Admin Login**
 To access the system as an admin:
 - **Username**: `admin`
 - **Password**: `Test@123`
 
-### Additional Notes
+**Additional Notes**
 - Ensure that your XAMPP/WAMP Apache and MySQL services are running before trying to load the application.
 - If you encounter any issues, check the configuration files such as `config.php` to ensure database connection details are correct.
 
