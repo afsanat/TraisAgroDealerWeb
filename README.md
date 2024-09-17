@@ -77,16 +77,6 @@ TRAIS Agro-Dealer Portal is a web application built using React.
 
 TRAIS Admin Portal is a web application built using PHP and MySQL. This guide will walk you through the steps required to set up and run the application on your local server using XAMPP or WAMP.
 
-1. **Clone the Repository**
-```bash
-   git clone https://github.com/afsanat/TraisAgroDealerWeb.git
-```
-
-2. **Navigate to the Admin Project Directory**
-```bash
-   cd TraisAgroDealerWeb/traisAdmin
-   ```
-
 **Prerequisites**
 
 To run the application, ensure you have the following installed:
@@ -100,7 +90,7 @@ To run the application, ensure you have the following installed:
 2. After installation, launch XAMPP/WAMP and start both **Apache** and **MySQL** services.
 
 **Step 2: Set Up the Web Application**
-1. Copy the entire `traisAdmin` project folder and paste it into the **htdocs** directory (for XAMPP) or the **www** directory (for WAMP). 
+1. Copy the entire `traisAdmin` project folder (it is already in the root folder cloned) and paste it into the **htdocs** directory (for XAMPP) or the **www** directory (for WAMP). 
    - For XAMPP, the path is usually `C:\xampp\htdocs\`.
    - For WAMP, the path is usually `C:\wamp64\www\`.
 
@@ -138,16 +128,14 @@ To run the application, ensure you have the following installed:
 
 TRAIS API is the application's backend built using Python fast API. deployed API link: https://traisapi.onrender.com/
 
-1. **Clone the Repository**
+1. **Navigate to the API Directory**
 ```bash
-   git clone https://github.com/afsanat/TraisAgroDealerWeb.git
-```
-
-2. **Navigate to the API Directory**
-```bash
-   cd TraisAgroDealerWeb/traisApi
+   cd traisApi
    ```
-
+2. **Run the requirement.txt found in the "TraisAgroDealerWeb/traisApi" folder**
+```bash
+pip install -r requirements.txt
+```
 3. **Run the backend**
 ```bash
 uvicorn main:app --reload --host 0.0.0.0 --port 8080
