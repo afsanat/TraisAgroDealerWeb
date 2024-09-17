@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 31, 2024 at 03:10 AM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Generation Time: Sep 17, 2024 at 06:19 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -40,6 +40,85 @@ CREATE TABLE `admin` (
 
 INSERT INTO `admin` (`id`, `UserName`, `Password`, `updationDate`) VALUES
 (1, 'admin', 'f925916e2754e5e03f75dd58a5733251', '2024-01-10 11:18:49');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `agro_dealers`
+--
+
+CREATE TABLE `agro_dealers` (
+  `id` int(11) NOT NULL,
+  `agro_dealer_id` varchar(10) NOT NULL,
+  `full_name` varchar(100) NOT NULL,
+  `business_name` varchar(100) NOT NULL,
+  `business_type` varchar(50) DEFAULT NULL,
+  `date_of_birth` date DEFAULT NULL,
+  `gender` enum('Male','Female') DEFAULT NULL,
+  `national_id_number` varchar(20) DEFAULT NULL,
+  `business_registration_number` varchar(50) DEFAULT NULL,
+  `tax_identification_number` varchar(20) DEFAULT NULL,
+  `phone_number` varchar(15) DEFAULT NULL,
+  `email_address` varchar(50) DEFAULT NULL,
+  `business_address` text DEFAULT NULL,
+  `postal_address` text DEFAULT NULL,
+  `bank_name` varchar(100) DEFAULT NULL,
+  `bank_account_number` varchar(20) DEFAULT NULL,
+  `bank_branch` varchar(100) DEFAULT NULL,
+  `bank_account_type` enum('Savings','Checking') DEFAULT NULL,
+  `account_holder_name` varchar(100) DEFAULT NULL,
+  `iban` varchar(34) DEFAULT NULL,
+  `swift_code` varchar(11) DEFAULT NULL,
+  `years_in_operation` int(11) DEFAULT NULL,
+  `type_of_agro_products` text DEFAULT NULL,
+  `supplier_relationships` text DEFAULT NULL,
+  `distribution_channels` text DEFAULT NULL,
+  `previous_subsidy_claims` text DEFAULT NULL,
+  `certification_details` text DEFAULT NULL,
+  `regulatory_compliance` text DEFAULT NULL,
+  `audit_reports` text DEFAULT NULL,
+  `claim_reference_number` varchar(20) DEFAULT NULL,
+  `claim_submission_date` date DEFAULT NULL,
+  `claim_amount` decimal(15,2) DEFAULT NULL,
+  `claim_status` enum('Pending','Approved','Rejected') DEFAULT NULL,
+  `supporting_documents` text DEFAULT NULL,
+  `government_contact_person` varchar(100) DEFAULT NULL,
+  `government_office_address` text DEFAULT NULL,
+  `government_office_phone_number` varchar(15) DEFAULT NULL,
+  `government_office_email_address` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `agro_dealers`
+--
+
+INSERT INTO `agro_dealers` (`id`, `agro_dealer_id`, `full_name`, `business_name`, `business_type`, `date_of_birth`, `gender`, `national_id_number`, `business_registration_number`, `tax_identification_number`, `phone_number`, `email_address`, `business_address`, `postal_address`, `bank_name`, `bank_account_number`, `bank_branch`, `bank_account_type`, `account_holder_name`, `iban`, `swift_code`, `years_in_operation`, `type_of_agro_products`, `supplier_relationships`, `distribution_channels`, `previous_subsidy_claims`, `certification_details`, `regulatory_compliance`, `audit_reports`, `claim_reference_number`, `claim_submission_date`, `claim_amount`, `claim_status`, `supporting_documents`, `government_contact_person`, `government_office_address`, `government_office_phone_number`, `government_office_email_address`) VALUES
+(1, 'AG2034', 'Mukama Ives Iradukunda', 'FarmerFriend Agro Inputs', 'Agro Inputs', '1993-02-02', 'Male', '1234567890', '0003', 'TAX1003', '07900030003', 'iammukama1003@gmail.com', 'Kigali Central Market Area', 'PMB 345', 'Eco Bank, Rwanda', '0000000001', 'Kigali City', 'Savings', 'Mukama Iradukunda', '000243', 'SWFT1003', 16, 'Fertilizers, Seeds and Pesticite', 'Agro Dealer', 'Buy and Take', 'No', 'Cert003', 'Compliance', 'No', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(2, '6580954839', 'Maria Powell', 'Grains Farmer', 'Crop Farming', '2024-09-15', 'Female', 'NIN001', '0003', 'TAX1003', '07900030003', 'iammukama1003@gmail.com', 'Kigali Central Market Area', 'PMB 345', 'Eco Bank, Rwanda', '0000000001', 'Kigali City', 'Savings', 'Mukama Iradukunda', '2333', 'SWFT1003', 8, 'Fertilizers, Seeds and Pesticite', 'Agro Dealer', 'Buy and Take', 'No', 'Cert003', 'Compliance', 'No', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `subsidies`
+--
+
+CREATE TABLE `subsidies` (
+  `subsidy_id` varchar(10) NOT NULL,
+  `subsidy_type` enum('Fertilizer','Seeds','Insecticide','Herbicide','Farm Implements','Machinery') NOT NULL,
+  `subsidy_value` decimal(5,2) NOT NULL,
+  `date_given` date NOT NULL,
+  `date_taken` date DEFAULT NULL,
+  `subsidy_beneficiary` varchar(100) NOT NULL,
+  `beneficiary_identity` varchar(10) NOT NULL,
+  `last_benefits` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `subsidies`
+--
+
+INSERT INTO `subsidies` (`subsidy_id`, `subsidy_type`, `subsidy_value`, `date_given`, `date_taken`, `subsidy_beneficiary`, `beneficiary_identity`, `last_benefits`) VALUES
+('SUB002', 'Fertilizer', 60.00, '2024-09-12', '0000-00-00', 'Smallholder', '00000', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -93,8 +172,48 @@ CREATE TABLE `tblenquiry` (
 
 INSERT INTO `tblenquiry` (`id`, `FullName`, `EmailId`, `MobileNumber`, `Subject`, `Description`, `PostingDate`, `Status`) VALUES
 (1, 'Jone Paaire', 'jone@gmail.com', '4646464646', 'Enquiry for Manali Trip', 'Kindly provide me more offer.', '2024-01-16 06:30:32', 1),
-(2, 'Kishan Twaerea', 'kishan@gmail.com', '6797947987', 'Enquiry', 'Any Offer for North Trip', '2024-01-18 06:31:38', NULL),
+(2, 'Kishan Twaerea', 'kishan@gmail.com', '6797947987', 'Enquiry', 'Any Offer for North Trip', '2024-01-18 06:31:38', 1),
 (3, 'Jacaob', 'Jai@gmail.com', '1646689721', 'Any offer for North', 'Any Offer for north', '2024-01-19 06:32:41', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tblfarmers`
+--
+
+CREATE TABLE `tblfarmers` (
+  `id` int(11) NOT NULL,
+  `FullName` varchar(100) DEFAULT NULL,
+  `Gender` enum('Male','Female') DEFAULT NULL,
+  `DateOfBirth` date DEFAULT NULL,
+  `DisabilityStatus` enum('Yes','No') DEFAULT NULL,
+  `NationalIDNumber` varchar(20) DEFAULT NULL,
+  `PhoneNumber` varchar(20) DEFAULT NULL,
+  `FarmAddress` text DEFAULT NULL,
+  `Village` varchar(100) DEFAULT NULL,
+  `County` varchar(100) DEFAULT NULL,
+  `LandSize` decimal(10,2) DEFAULT NULL,
+  `CropType` varchar(100) DEFAULT NULL,
+  `CooperativeMembership` enum('Yes','No') DEFAULT NULL,
+  `InputUsage` text DEFAULT NULL,
+  `YieldInfo` text DEFAULT NULL,
+  `HouseholdSize` int(11) DEFAULT NULL,
+  `IncomeLevel` varchar(50) DEFAULT NULL,
+  `IrrigationAccess` enum('Yes','No') DEFAULT NULL,
+  `MarketAccess` enum('Yes','No') DEFAULT NULL,
+  `VulnerabilityStatus` varchar(100) DEFAULT NULL,
+  `DisasterProneArea` enum('Yes','No') DEFAULT NULL,
+  `ResourcesAccess` varchar(100) DEFAULT NULL,
+  `RegDate` timestamp NOT NULL DEFAULT current_timestamp(),
+  `UpdationDate` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tblfarmers`
+--
+
+INSERT INTO `tblfarmers` (`id`, `FullName`, `Gender`, `DateOfBirth`, `DisabilityStatus`, `NationalIDNumber`, `PhoneNumber`, `FarmAddress`, `Village`, `County`, `LandSize`, `CropType`, `CooperativeMembership`, `InputUsage`, `YieldInfo`, `HouseholdSize`, `IncomeLevel`, `IrrigationAccess`, `MarketAccess`, `VulnerabilityStatus`, `DisasterProneArea`, `ResourcesAccess`, `RegDate`, `UpdationDate`) VALUES
+(1, 'Nasiru Iliya', 'Male', '1992-10-06', 'Yes', '91919191', '08032083634', 'Kicukiro, Kenya Road, Kaduna, Nigeria', 'Kicukiro', 'Rwanda', 1.00, 'maize', 'No', '3 Bags', '5 Bags', 4, 'Low', 'Yes', 'Yes', 'Orphaned', 'Yes', 'Fertilizer', '2024-09-09 22:15:44', '2024-09-09 22:15:44');
 
 -- --------------------------------------------------------
 
@@ -137,10 +256,10 @@ CREATE TABLE `tblpages` (
 --
 
 INSERT INTO `tblpages` (`id`, `type`, `detail`) VALUES
-(1, 'terms', '										<p align=\"justify\"><font size=\"2\"><strong><font color=\"#990000\">(1) ACCEPTANCE OF TERMS</font><br><br></strong>Welcome to Yahoo! India. 1Yahoo Web Services India Private Limited Yahoo\", \"we\" or \"us\" as the case may be) provides the Service (defined below) to you, subject to the following Terms of Service (\"TOS\"), which may be updated by us from time to time without notice to you. You can review the most current version of the TOS at any time at: <a href=\"http://in.docs.yahoo.com/info/terms/\">http://in.docs.yahoo.com/info/terms/</a>. In addition, when using particular Yahoo services or third party services, you and Yahoo shall be subject to any posted guidelines or rules applicable to such services which may be posted from time to time. All such guidelines or rules, which maybe subject to change, are hereby incorporated by reference into the TOS. In most cases the guides and rules are specific to a particular part of the Service and will assist you in applying the TOS to that part, but to the extent of any inconsistency between the TOS and any guide or rule, the TOS will prevail. We may also offer other services from time to time that are governed by different Terms of Services, in which case the TOS do not apply to such other services if and to the extent expressly excluded by such different Terms of Services. Yahoo also may offer other services from time to time that are governed by different Terms of Services. These TOS do not apply to such other services that are governed by different Terms of Service. </font></p>\r\n<p align=\"justify\"><font size=\"2\">Welcome to Yahoo! India. Yahoo Web Services India Private Limited Yahoo\", \"we\" or \"us\" as the case may be) provides the Service (defined below) to you, subject to the following Terms of Service (\"TOS\"), which may be updated by us from time to time without notice to you. You can review the most current version of the TOS at any time at: </font><a href=\"http://in.docs.yahoo.com/info/terms/\"><font size=\"2\">http://in.docs.yahoo.com/info/terms/</font></a><font size=\"2\">. In addition, when using particular Yahoo services or third party services, you and Yahoo shall be subject to any posted guidelines or rules applicable to such services which may be posted from time to time. All such guidelines or rules, which maybe subject to change, are hereby incorporated by reference into the TOS. In most cases the guides and rules are specific to a particular part of the Service and will assist you in applying the TOS to that part, but to the extent of any inconsistency between the TOS and any guide or rule, the TOS will prevail. We may also offer other services from time to time that are governed by different Terms of Services, in which case the TOS do not apply to such other services if and to the extent expressly excluded by such different Terms of Services. Yahoo also may offer other services from time to time that are governed by different Terms of Services. These TOS do not apply to such other services that are governed by different Terms of Service. </font></p>\r\n<p align=\"justify\"><font size=\"2\">Welcome to Yahoo! India. Yahoo Web Services India Private Limited Yahoo\", \"we\" or \"us\" as the case may be) provides the Service (defined below) to you, subject to the following Terms of Service (\"TOS\"), which may be updated by us from time to time without notice to you. You can review the most current version of the TOS at any time at: </font><a href=\"http://in.docs.yahoo.com/info/terms/\"><font size=\"2\">http://in.docs.yahoo.com/info/terms/</font></a><font size=\"2\">. In addition, when using particular Yahoo services or third party services, you and Yahoo shall be subject to any posted guidelines or rules applicable to such services which may be posted from time to time. All such guidelines or rules, which maybe subject to change, are hereby incorporated by reference into the TOS. In most cases the guides and rules are specific to a particular part of the Service and will assist you in applying the TOS to that part, but to the extent of any inconsistency between the TOS and any guide or rule, the TOS will prevail. We may also offer other services from time to time that are governed by different Terms of Services, in which case the TOS do not apply to such other services if and to the extent expressly excluded by such different Terms of Services. Yahoo also may offer other services from time to time that are governed by different Terms of Services. These TOS do not apply to such other services that are governed by different Terms of Service. </font></p>\r\n										'),
-(2, 'privacy', '										<span style=\"color: rgb(0, 0, 0); font-family: &quot;Open Sans&quot;, Arial, sans-serif; font-size: 14px; text-align: justify;\">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat</span>\r\n										'),
-(3, 'aboutus', '										<div><span style=\"color: rgb(0, 0, 0); font-family: Georgia; font-size: 15px; text-align: justify; font-weight: bold;\">Welcome to Tourism Management System!!!</span></div><span style=\"font-family: &quot;courier new&quot;;\"><span style=\"color: rgb(0, 0, 0); font-size: 15px; text-align: justify;\">Since then, our courteous and committed team members have always ensured a pleasant and enjoyable tour for the clients. This arduous effort has enabled TMS to be recognized as a dependable Travel Solutions provider with three offices Delhi.</span><span style=\"color: rgb(80, 80, 80); font-size: 13px;\">&nbsp;We have got packages to suit the discerning traveler\'s budget and savor. Book your dream vacation online. Supported quality and proposals of our travel consultants, we have a tendency to welcome you to decide on from holidays packages and customize them according to your plan.</span></span>\r\n										'),
-(11, 'contact', '																				<span style=\"color: rgb(0, 0, 0); font-family: &quot;Open Sans&quot;, Arial, sans-serif; font-size: 14px; text-align: justify;\">Address------J-890 Dwarka House New Delhi-110096</span>');
+(1, 'terms', '																				<p align=\"justify\"><font size=\"2\"><strong><font color=\"#990000\">ACCEPTANCE OF TERMS</font><br></strong></font><br></p><p align=\"justify\"><span style=\"font-size: small;\">TRAIS Terms and Condition Applied</span></p>\r\n										\r\n										'),
+(2, 'privacy', '<div><span style=\"font-weight: bold;\">User Privacy And Policy</span></div><div><br></div><div>The privacy and confidentiality is respected in accordance with regulations such as GDRP</div>'),
+(3, 'aboutus', '																				<div><span style=\"color: rgb(0, 0, 0); font-family: Georgia; font-size: 15px; text-align: justify; font-weight: bold;\">Smart TRAIS Application</span></div><div><span style=\"color: rgb(0, 0, 0); font-family: Georgia; font-size: 15px; text-align: justify; font-weight: bold;\"><br></span></div><div style=\"text-align: justify;\">For more Information about the system, contact the following;</div><div style=\"text-align: justify;\"><br></div><div style=\"text-align: justify;\">Nasiru Iliya</div><div style=\"text-align: justify;\">Afsanah Ineza</div><div style=\"text-align: justify;\">Thompson Kaisi</div>'),
+(11, 'contact', '																														<span style=\"color: rgb(0, 0, 0); font-family: &quot;Open Sans&quot;, Arial, sans-serif; font-size: 14px; text-align: justify;\">Contact</span><div><br></div><div>Smart TRAIS Tools for more information</div>');
 
 -- --------------------------------------------------------
 
@@ -166,15 +285,8 @@ CREATE TABLE `tbltourpackages` (
 --
 
 INSERT INTO `tbltourpackages` (`PackageId`, `PackageName`, `PackageType`, `PackageLocation`, `PackagePrice`, `PackageFetures`, `PackageDetails`, `PackageImage`, `Creationdate`, `UpdationDate`) VALUES
-(1, 'Swiss Paris Delight Premium 2020 (Group Package)', 'Group Package', 'Paris and Switzerland', 6000, ' Round trip Economy class airfare valid for the duration of the holiday - Airport taxes - Accommodation for 3 nights in Paris and 3 nights in scenic Switzerland - Enjoy continental breakfasts every morning - Enjoy 5 Indian dinners in Mainland Europe - Exp', 'Pick this holiday for a relaxing vacation in Paris and Switzerland. Your tour embarks from Paris. Enjoy an excursion to popular attractions like the iconic Eiffel Tower. After experiencing the beautiful city, you will drive past mustard fields through Burgundy to reach Switzerland. While there, you can opt for a tour to Interlaken and then to the Trummelbach Falls. Photostop at Zurich Lake and a cable car ride to Mt. Titlis are the main highlights of the holiday.', '1581490262_2_1.jpg', '2024-07-15 05:21:58', '2024-01-30 05:20:49'),
-(2, 'Bhutan Holidays - Thimphu and Paro Special', 'Family Package', 'Bhutan', 3000, 'Free Wi-fi, Free Breakfast, Free Pickup and drop facility ', 'Visit to Tiger\'s Nest Monastery | Complimentary services of a Professional Guide', 'BHUTAN-THIMPU-PARO-PUNAKHA-TOUR-6N-7D.jpeg', '2024-07-15 05:21:58', '2024-01-30 05:20:56'),
-(3, 'Soulmate Special Bali - 7 Nights', 'Couple Package', 'Indonesia(Bali)', 5000, 'Free Pickup and drop facility, Free Wi-fi , Free professional guide', 'Airport transfers by private car | Popular Sightseeing included | Suitable for Couple and budget travelers', '1583140977_5_11.jpg', '2024-07-15 05:21:58', '2024-01-30 05:20:56'),
-(4, 'Kerala - A Lovers Paradise - Value Added', 'Family Package', 'Kerala', 1000, 'Free Wi-fi, Free pick up and drop facility,', 'Visit Matupetty Dam, tea plantation and a spice garden | View sunset in Kanyakumari | AC Car at disposal for 2hrs extra (once per city)', 'images (2).jpg', '2024-07-15 05:21:58', '2024-01-30 05:20:56'),
-(5, 'Short Trip To Dubai', 'Family', 'Dubai', 4500, 'Free pick up and drop facility, Free Wi-fi, Free breakfast', 'A Holiday Package for the entire family.', 'unnamed.jpg', '2024-07-15 05:21:58', '2024-01-30 05:20:56'),
-(6, 'Sikkim Delight with Darjeeling (customizable)', 'Group', 'Sikkim', 3500, 'Free Breakfast, Free Pick up drop facility', 'Changu Lake and New Baba Mandir excursion | View the sunrise from Tiger Hill | Get Blessed at the famous Rumtek Monastery', 'download (2).jpg', '2024-07-15 05:21:58', '2024-01-30 05:20:56'),
-(7, '6 Days in Guwahati and Shillong With Cherrapunji Excursion', 'Family Package', 'Guwahati(Sikkim)', 4500, 'Breakfast,  Accommodation » Pick-up » Drop » Sightseeing', 'After arrival at Guwahati airport meet our representative & proceed for Shillong. Shillong is the capital and hill station of Meghalaya, also known as Abode of Cloud, one of the smallest states in India. En route visit Barapani lake. By afternoon reach at Shillong. Check in to the hotel. Evening is leisure. Spent time as you want. Visit Police bazar. Overnight stay at Shillong.', '95995.jpg', '2024-07-15 05:21:58', '2024-01-30 05:20:56'),
-(8, 'Grand Week in North East - Lachung, Lachen and Gangtok', 'Domestic Packages', 'Sikkim', 4500, 'Free Breakfast, Free Wi-fi', 'Changu Lakeand New Baba Mandir excursion | Yumthang Valley tour | Gurudongmar Lake excursion | Night stay in Lachen', 'download (3).jpg', '2024-07-15 05:21:58', '2024-01-30 05:20:56'),
-(9, 'Gangtok & Darjeeling Holiday (Without Flights)', 'Family Package', 'Sikkim', 1000, 'Free Wi-fi, Free pickup and drop facility', 'Ideal tour for Family | Sightseeing in Gangtok and Darjeeling | Full day excursion to idyllic Changu Lake | Visit to Ghoom Monastery', '1540382781_shutterstock_661867435.jpg.jpg', '2024-07-15 05:21:58', '2024-01-30 05:20:56');
+(3, 'Ant - Killer Pesticides', 'Farm Spraying Pesticide', 'Kigali', 230, 'Liquids and Herbicites', 'Ant-Killer is an organophosphate based termiticide/insecticide with outstanding and versatile control of a wide range of insect and arthropods pests', 'hebisite1.jpg', '2024-07-15 05:21:58', '2024-09-12 12:59:44'),
+(4, 'Centipede Lawn Fertilizer 15-0-15 (16 lbs)', 'Fertilizer', 'Uganda', 220, 'Free Wi-fi, Free pick up and drop facility,', 'NPK fertilizer represents the primary product used for supplementing the nutritional requirements of flowers, trees, grasses, and agricultural crops.', 'fetilizer11.jpg', '2024-07-15 05:21:58', '2024-09-12 13:07:04');
 
 -- --------------------------------------------------------
 
@@ -214,6 +326,19 @@ ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `agro_dealers`
+--
+ALTER TABLE `agro_dealers`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `agro_dealer_id` (`agro_dealer_id`);
+
+--
+-- Indexes for table `subsidies`
+--
+ALTER TABLE `subsidies`
+  ADD PRIMARY KEY (`subsidy_id`);
+
+--
 -- Indexes for table `tblbooking`
 --
 ALTER TABLE `tblbooking`
@@ -223,6 +348,12 @@ ALTER TABLE `tblbooking`
 -- Indexes for table `tblenquiry`
 --
 ALTER TABLE `tblenquiry`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tblfarmers`
+--
+ALTER TABLE `tblfarmers`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -262,6 +393,12 @@ ALTER TABLE `admin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `agro_dealers`
+--
+ALTER TABLE `agro_dealers`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `tblbooking`
 --
 ALTER TABLE `tblbooking`
@@ -272,6 +409,12 @@ ALTER TABLE `tblbooking`
 --
 ALTER TABLE `tblenquiry`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `tblfarmers`
+--
+ALTER TABLE `tblfarmers`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tblissues`

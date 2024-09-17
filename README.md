@@ -69,7 +69,9 @@ TRAIS Agro-Dealer Portal is a web application built using React.
 ```bash
    npm run dev
    ```
-
+5. **To login, you can enter the following credentials**
+- **Username**: `agrodealer`
+- **Password**: `Test@123`
 
 ## How to Run the Admin Portal
 
@@ -97,29 +99,36 @@ To run the application, ensure you have the following installed:
 1. Download and install [XAMPP](https://www.apachefriends.org/index.html) or [WAMP](https://www.wampserver.com/en/).
 2. After installation, launch XAMPP/WAMP and start both **Apache** and **MySQL** services.
 
-**Step 2: Set Up the Database**
+**Step 2: Set Up the Web Application**
+1. Copy the entire `traisAdmin` project folder and paste it into the **htdocs** directory (for XAMPP) or the **www** directory (for WAMP). 
+   - For XAMPP, the path is usually `C:\xampp\htdocs\`.
+   - For WAMP, the path is usually `C:\wamp64\www\`.
+
+**Step 3: Set Up the Database**
 1. Open your browser and navigate to **PHPMyAdmin** by typing `http://localhost/phpmyadmin/` in the address bar.
 2. In PHPMyAdmin, create a new database:
    - Click on the **Databases** tab.
-   - Enter a name for your database (e.g., `trais_db`).
-   - Click **Create**.
+   - Enter a name for your database (i.e., `tms`).
+   - Click **Create** to create the tms database.
 3. Import the TRAIS database:
-   - Click on the new database you've just created.
+   - Click on the new database you've just created (tms).
    - Select the **Import** tab.
-   - Click **Choose File** and locate the `tms.sql` file found inside the `trais` folder of the project.
+   - Click **Choose File** and locate the `tms.sql` file found inside the `traisAdmin` folder of the project.
    - Click **Go** to import the database.
 
-**Step 3: Set Up the Web Application**
-1. Copy the entire `trais` project folder and paste it into the **htdocs** directory (for XAMPP) or the **www** directory (for WAMP). 
-   - For XAMPP, the path is usually `C:\xampp\htdocs\`.
-   - For WAMP, the path is usually `C:\wamp64\www\`.
-2. After placing the project folder, open your browser and navigate to:  
-   `http://localhost/trais/index.php`
-
-**Step 4: Admin Login**
-To access the system as an admin:
+**Step 4: Start the Application and Admin Login**
+1. Open the browser and type the following URL:  
+   `http://localhost/traisAdmin/index.php`
+2. Locate Admin Login (top left corner, close to home icon)
+3. Click Admin Login
+4. enter below login details:
 - **Username**: `admin`
 - **Password**: `Test@123`
+5. Go to eSignet & Subsidy
+6. choose manage
+7. enter the farmer's UIN (i.e: 6580954839)
+8. Click search
+9. Click Authenticate to be redirected to esignate portal to authenticate
 
 **Additional Notes**
 - Ensure that your XAMPP/WAMP Apache and MySQL services are running before trying to load the application.
