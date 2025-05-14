@@ -1,5 +1,5 @@
 // Import the SignInWithEsignetButton component
-import SignInWithEsignetButton from '/esignateSignin.js'; 
+import SignInWithEsignetButton from '/public/esignateSignin.js'; 
 
 // Function to render the sign-in button
 export const renderSignInButton = () => {
