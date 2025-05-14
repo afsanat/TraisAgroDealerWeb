@@ -261,7 +261,7 @@ export default function ConfirmationPage() {
   };
   
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 p-4">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-white p-4">
       <div className="bg-white shadow-lg rounded-lg p-8 max-w-md w-full text-center">
         <div className="flex justify-center mb-6">
           <div className="rounded-full bg-green-100 p-3">
